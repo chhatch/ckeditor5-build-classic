@@ -32,13 +32,15 @@ import TableToolbar from "@ckeditor/ckeditor5-table/src/tabletoolbar";
 import Base64UploadAdapter from "@ckeditor/ckeditor5-upload/src/adapters/base64uploadadapter";
 import FontColor from "@ckeditor/ckeditor5-font/src/fontcolor";
 import FontSize from "@ckeditor/ckeditor5-font/src/fontsize";
+import SimpleUploadAdapter from '@ckeditor/ckeditor5-upload/src/adapters/simpleuploadadapter';
+
 
 export default class ClassicEditor extends ClassicEditorBase {}
 
 // Plugins to include in the build.
 ClassicEditor.builtinPlugins = [
 	Essentials,
-	Base64UploadAdapter,
+//	Base64UploadAdapter,
 	FontColor,
 	FontSize,
 	Autoformat,
@@ -59,6 +61,7 @@ ClassicEditor.builtinPlugins = [
 	MediaEmbed,
 	Paragraph,
 	PasteFromOffice,
+    SimpleUploadAdapter,
 	Table,
 	TableToolbar
 ];
@@ -99,6 +102,9 @@ ClassicEditor.defaultConfig = {
 	mediaEmbed: {
 		previewsInData: true
 	},
+    simpleUpload: {
+        uploadUrl: 'https://dev.aedmarket.com/image'
+    },
 	table: {
 		contentToolbar: ["tableColumn", "tableRow", "mergeTableCells"]
 	},
